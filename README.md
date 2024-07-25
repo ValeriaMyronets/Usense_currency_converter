@@ -1,27 +1,26 @@
-# Converter
+# Currency Converter
+This Angular project is a currency converter application that allows users to convert amounts between different currencies. The application fetches real-time exchange rates from a public API and updates conversions accordingly.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+## Features
+Real-time Exchange Rates: The header displays the current exchange rates of USD and EUR relative to UAH.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Each currency has its own input and select elements.
+- Separate input+select for the first currency and separate input+select for the second currency.
+- Input fields allow users to specify the amount of currency to convert.
+- Select elements offer at least three currencies: UAH, USD, and EUR.
+- Bidirectional conversion functionality:
+  - Changing the value in the first currency updates the value in the second currency.
+  - Changing the value in the second currency updates the value in the first currency.
+  - Changing the currency in either select element updates both conversions correctly.
 
-## Code scaffolding
+## Requirements
+- Angular: The project is built using Angular.
+- Tailwind CSS: Used for styling the components.
+- Public API for Exchange Rates: The application fetches exchange rates from a public API.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
+ **Start the development server:**
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   ng serve

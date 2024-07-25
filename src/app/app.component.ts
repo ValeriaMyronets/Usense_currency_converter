@@ -1,13 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CurrencyService } from './service/currency.service';
+import { State } from './store/currency.reducer';
+import { Store } from '@ngrx/store';
+import { setCurrency } from './store/currency.actions';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'converter';
+  public title = 'converter';
+
+  constructor(private currencyService: CurrencyService, private store: Store<{currency: State}> ) {
+    this.init();
+  }
+
+  public init(): void {
+    this.currencyService.getExchangeRates().subscribe(data => {
+      this.store.dispatch(setCurrency(data));
+    });
+  }
 }

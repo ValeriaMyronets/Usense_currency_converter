@@ -1,0 +1,33 @@
+<div class="converter bg-gray-100 p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-16">
+  <form [formGroup]="currencyForm" class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex flex-col space-y-2">
+        <label for="amountFrom" class="text-sm font-medium text-gray-700">Amount:</label>
+        <input type="number" id="amountFrom" name="amountFrom" formControlName="amountFrom"
+               class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" min="0">
+      </div>
+
+      <div class="flex flex-col space-y-2">
+        <label for="fromCurrency" class="text-sm font-medium text-gray-700">From:</label>
+        <select id="fromCurrency" formControlName="fromCurrency"
+                class="border border-gray-300 rounded-md p-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.cc }}</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col space-y-2">
+        <label for="amountTo" class="text-sm font-medium text-gray-700">Amount:</label>
+        <input type="number" id="amountTo" name="amountTo" formControlName="amountTo"
+               class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" min="0">
+      </div>
+
+      <div class="flex flex-col space-y-2">
+        <label for="toCurrency" class="text-sm font-medium text-gray-700">To:</label>
+        <select id="toCurrency" formControlName="toCurrency"
+                class="border border-gray-300 rounded-md p-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.cc }}</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
